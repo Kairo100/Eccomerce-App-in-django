@@ -1,0 +1,18 @@
+{%extends 'nav.html'%}
+{%block content%}
+<div class="row">
+    {% for product in pro %}
+    <div class="col-4">
+    <div class="card" style="width:100%">
+        <h5 class="card-header">{{product.Name}}</h5>
+        <img src="{{product.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.Price}}</h5>
+        
+            <a href="{%url 'productDetails' product.id %}" class="btn btn-primary">Buy</a>
+        </div>
+    </div>
+</div>
+    {%endfor%}
+</div>
+{%endblock%}
